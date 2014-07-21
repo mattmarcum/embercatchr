@@ -3,9 +3,11 @@
     <li {{bind-attr class=":list-group-item"}}>{{#link-to item.link}}{{item.title}}{{/link-to}}</li>
 {{/each}}
 {{#each controller}}
+    {{#unless isEmpty}}
     <li {{bind-attr class=":list-group-item"}}>
         <span class="badge">{{unlistened}}</span>
         {{#link-to "podcast" id}}{{title}}{{/link-to}}
     </li>
+    {{/unless}}
 {{/each}}
 </ul>

@@ -1,5 +1,5 @@
 # [Embercatchr](http://embercatchr.com)
-A simple podcather using Emberjs and indexedDB.  A work in progress.
+A simple podcatcher using Emberjs and indexedDB.  A work in progress.
 
 # Libraries and Web Resources
 [embercatchr.com](http://embercatchr.com)

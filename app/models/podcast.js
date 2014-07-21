@@ -128,7 +128,7 @@ export default DS.Model.extend({
 
     _formatUrl: function(){
         
-        return 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&output=json_xml&num=-1&q=' +
+        return 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&output=json_xml&num=20&q=' +
         
             encodeURIComponent( this.get( 'url' ) );
     

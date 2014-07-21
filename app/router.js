@@ -14,7 +14,6 @@ Router.map(function() {
   this.resource('podcast', { path: 'podcasts/:podcast_id' }, function(){
     this.resource('pod', { path: 'pods/:pod_id' });
   });
-  this.route('application');
 });
 
 export default Router;

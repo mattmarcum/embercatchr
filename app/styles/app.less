@@ -1,0 +1,78 @@
+@import "/vendor/bootstrap/less/bootstrap.less";
+@icon-font-path: "bootstrap/fonts/";
+
+@headerHeight: 70px;
+@footerHeight: 140px;
+
+@bgColor: #fff;
+@bgColorInverse: #000;
+
+@text: #000;
+@textInverse: #fff;
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.main-container {
+    margin: 0;
+    height: 100%;
+}
+
+#header {
+    height: @headerHeight;
+    width: 100%;
+    background-color: @bgColorInverse;
+    color: @textInverse;
+    position: absolute;
+}
+
+#main {
+    height: 100%;
+    padding-top: @headerHeight+15;
+    padding-bottom: @footerHeight;
+    background-color: @bgColor;
+    color: @text;
+}
+
+.navbar-header {
+    width: 100%;
+}
+.navbar-toggle {
+    float: left;
+    margin-left: 15px;
+}
+
+.main-row{
+    height: 100%;
+}
+
+.main-nav {
+    height: 100%;
+}
+
+.main-content{
+    overflow:auto;
+    height: 100%;
+}
+
+#footer {
+    height: @footerHeight;
+    width: 100%;
+    background-color: @bgColorInverse;
+    color: @textInverse;
+    position: absolute;
+    bottom: 0;
+}
+
+.progress-bar {
+    color: #000;
+}
+.progress-bar[aria-valuenow="1"], .progress-bar[aria-valuenow="2"] {
+    min-width: 0;
+}
+.progress-text {
+    padding-left: 5px;
+}

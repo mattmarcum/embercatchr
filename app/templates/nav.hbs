@@ -1,0 +1,11 @@
+<ul class="list-group">
+{{#each item in topLinks}}
+    <li {{bind-attr class=":list-group-item"}}>{{#link-to item.link}}{{item.title}}{{/link-to}}</li>
+{{/each}}
+{{#each controller}}
+    <li {{bind-attr class=":list-group-item"}}>
+        <span class="badge">{{unlistened}}</span>
+        {{#link-to "podcast" id}}{{title}}{{/link-to}}
+    </li>
+{{/each}}
+</ul>

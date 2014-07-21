@@ -1,0 +1,23 @@
+<header class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <p class="navbar-brand">Embercatch{{webTwoDotOh}}r</p>
+            <p class="navbar-text navbar-right"><a class="navbar-link" href="#" {{action toggleWebTwoDotOh}}>toggle web 2.0</a></p>
+        </div>
+    </div>
+</header>
+<div id="main">
+    <div class="row main-row">
+        <div class="col-sm-4 main-nav">
+            {{outlet nav}}
+        </div>
+        <section class="col-sm-8 main-content">
+            {{outlet}}
+        </section>
+    </div>
+</div>
+<footer id="footer" class="row">
+    <div class="col-sm-12">
+        {{outlet player}}
+    </div>
+</footer>

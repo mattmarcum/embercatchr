@@ -1,0 +1,15 @@
+<table class="table">
+    <tr>
+        <th>Title</th><th>Date</th><th>Length</th><th>Listened</th>
+    </tr>
+    <tr>
+        <td>{{title}}</td>
+        <td>{{parsed-date pubDate}}</td>
+        <td>{{parsed-duration duration}}</td>
+        <td>{{hasListened}}
+    </tr>
+</table>
+<button type="button" class="btn btn-default" {{action playNow}}>Play Now</button>
+<hr/>
+<p>{{subtitle}}</p>
+{{{description}}}

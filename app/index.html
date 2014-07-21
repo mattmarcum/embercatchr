@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Embercatchr</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{BASE_TAG}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/embercatchr.css">
+  </head>
+  <body>
+    <script>
+      window.EmbercatchrENV = {{ENV}};
+      window.EmberENV = window.EmbercatchrENV.EmberENV;
+    </script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/embercatchr.js"></script>
+    <script>
+      window.Embercatchr = require('embercatchr/app')['default'].create(EmbercatchrENV.APP);
+    </script>
+  </body>
+</html>

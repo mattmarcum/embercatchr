@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "bootstrap": "~3.2.0",
-    "ember-indexeddb-adapter": "git@github.com:mattmarcum/ember-indexeddb-adapter.git#master"
+    "ember-indexeddb-adapter": "git@github.com:mattmarcum/ember-indexeddb-adapter.git#master",
+    "jFeed": "git@github.com:mattmarcum/jFeed.git#master"
   }
 }

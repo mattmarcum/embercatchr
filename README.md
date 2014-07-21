@@ -1,3 +1,22 @@
+EmberJs and Ember-cli
+
+Node and Bower
+
+Ember Inspector
+
+embercatchr.com
+
+console and the container
+
+promises and promiseProxy objects
+
+Ember Data
+
+IndexedDB
+
+JFeed
+
+
 # Embercatchr
 * ember new embercatcher
 * cd embercatchr

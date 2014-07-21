@@ -14,6 +14,7 @@
     "ember-cli-test-loader": "rjackson/ember-cli-test-loader#0.0.2"
   },
   "devDependencies": {
-    "bootstrap": "~3.2.0"
+    "bootstrap": "~3.2.0",
+    "ember-indexeddb-adapter": "git@github.com:mattmarcum/ember-indexeddb-adapter.git#master"
   }
 }

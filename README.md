@@ -126,6 +126,13 @@ And lets go ahead and add our last couple of controllers and templates and views
 * ember g controller player
 * ember g template player
 * ember g view player
+* ember g template pods/index
+* ember g controller pods/index type:array
+
+Lets make sure the pods are sorted by date.
+
+Now for the final, final piece - the Player!
+
 
 
 

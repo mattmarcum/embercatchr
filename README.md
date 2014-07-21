@@ -16,7 +16,6 @@ IndexedDB
 
 JFeed
 
-
 # Embercatchr
 * ember new embercatcher
 * cd embercatchr
@@ -61,7 +60,7 @@ You might think this is pretty dumb, but we've just learned templates, controlle
 
 #Resources
 We're going to create two models, a podcast and a pod, but first we've got to install the indexedDb adapter.  We can install it through bower like so:
-* bower install git@github.com:mattmarcum/ember-indexeddb-adapter.git#master
+* bower install --save-dev git@github.com:mattmarcum/ember-indexeddb-adapter.git#master
 I'm using my own fork of the indexedDb adapter until the maintainer fixes some bugs I submitted a pr for
 Finish the installation by importing the adapter into the Brocfile.js
 * app.import( 'vendor/ember-indexeddb-adapter/dist/ember_indexeddb_adapter.js' );
@@ -77,7 +76,7 @@ This generates some models and their corresponding routes.  Notice that it updat
 Now lets add lets add some attributes.  The hasMany and belongsTo set up the relationships between the two models
 Now we're going to add a method on our podcast model call updateFeed. This method is going to take a url for an rss feed and 
 retrieve it via google feeds and then parse it with a library.  Lets install the library first.
-* bower install git@github.com:mattmarcum/jFeed.git#master
+* bower install --save-dev git@github.com:mattmarcum/jFeed.git#master
 again we're using a fork of mine for an old library that hasn't been updated in awhile.  I've added some features to support podcasts and 
 hopefully the author will update the library soon.
 I'm going to copy and paste the updateFeed function now and briefly explain what's going on here.

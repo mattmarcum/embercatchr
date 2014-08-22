@@ -9,9 +9,12 @@ export default Ember.Route.extend({
             this.modelFor( 'podcast' ).updateFeed();
         },
         delete: function() {
-            var self = this;
+            var self = this,
+                podcast = self.modelFor( 'podcast' );
+           
+            podcast.get( 'pods' ).invoke( 'destroyRecord' );
 
-            self.modelFor( 'podcast' ).destroyRecord()
+            podcast.destroyRecord()
             .then( function(){
                 self.transitionTo( 'podcasts' );
             }).catch( function( error ){

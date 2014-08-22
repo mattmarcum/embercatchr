@@ -1,15 +1,17 @@
 <h1>Podcasts:All</h1>
-<table class="table">
-    <tr>
-        <th>Title</th>
-        <th>Last updated</th>
-        <th># Unlistened</th>
-    </tr>
-{{#each podcast in controller}}
-    <tr>
-        <td>{{#link-to "podcast.index" podcast.id }}{{get-default podcast.title 'Unknown'}}{{/link-to}}</td>
-        <td>{{parsed-date podcast.lastUpdated}}</td>
-        <td>{{podcast.unlistened}}</td>
-    </tr>
-{{/each}}
-</table>
+<div class="table-responsive">
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Last updated</th>
+            <th># Unlistened</th>
+        </tr>
+    {{#each podcast in controller}}
+        <tr>
+            <td>{{#link-to "podcast.index" podcast.id }}{{get-default podcast.title 'Unknown'}}{{/link-to}}</td>
+            <td>{{parsed-date podcast.lastUpdated}}</td>
+            <td>{{podcast.unlistened}}</td>
+        </tr>
+    {{/each}}
+    </table>
+</div>

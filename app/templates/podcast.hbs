@@ -3,7 +3,13 @@
         <span class="h1">{{title}}</span>
 
         <span class="pull-right">
-            <button type="button" class="btn btn-default" {{action updateFeed}}>Update Feed</button> <button type="button" class="btn btn-default" {{action delete}}>Delete</button>
+            <button type="button" class="btn btn-default dropdown-toggle" id="podcastSettings" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-cog"></span>
+            </button>   
+            <ul class="dropdown-menu" role="menu" aria-labelledby="podcastSettings">
+                <li role="presentation"><a role="menuitem" tabindex="-1" {{action updateFeed}}>Update Feed</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" {{action delete}}>Delete</a></li>
+            </ul>
         </span>
     </div>
 </div> 

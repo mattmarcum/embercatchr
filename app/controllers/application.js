@@ -7,8 +7,15 @@ export default Ember.Controller.extend({
                 return this.set( 'webTwoDotOh', '');
             }
             this.set( 'webTwoDotOh', 'e' );
+        },
+        toggleNav: function(){
+            this.toggleProperty( 'showNav' );
         }
     },
    
-    webTwoDotOh: 'e'
+    webTwoDotOh: 'e',
+
+    currentPathChange: function(){
+        this.set( 'showNav', false );
+    }.observes( 'currentPath' )
 });

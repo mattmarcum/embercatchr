@@ -18,7 +18,7 @@ export default Ember.ObjectController.extend({
     }.property( 'duration', 'currentPosition' ),
 
     title: function(){
-        return this.get('model.title') || 'No Pod Loaded';
-    }.property( 'model.title ')
+        return this.get( 'model.title' ) || 'No Pod Loaded';
+    }.property( 'model.title' )
     
 });

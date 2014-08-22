@@ -59,6 +59,23 @@ html, body {
     height: 100%;
 }
 
+@media screen and (max-width: 767px) {
+    .row-offcanvas {
+        position: relative;
+        transition: all .25s ease-out;
+        left: 0;
+    }
+    .row-offcanvas.active {
+        left: 80%;
+    }
+    .row-offcanvas .sidebar-offcanvas {
+        position: absolute;
+        top: 0;
+        width: 75%;
+        left: -75%;
+    }
+}
+
 #footer {
     height: @footerHeight;
     width: 100%;

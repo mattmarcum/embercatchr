@@ -44,26 +44,60 @@ export default DS.Model.extend({
 
                 var xmlFeed = result.responseData.xmlString,
                     feed = new JFeed( xmlFeed ),
-                    pods;
+                    podPromises;
 
                 self.set( 'title', feed.title );
                 self.set( 'description', feed.description );
                 self.set( 'lastUpdated', new Date() );
+                self.save();
 
-                pods=feed.items.map( function( item ){
-                    return {
+                podPromises = feed.items.map( function( item ){
+                    var podRecord = self.store.createRecord( 'pod', {
                         description: item.description,
-                        audioUrl: item.enclosure,
                         title: item.title,
                         pubDate: new Date(item.updated),
                         url: item.id,
                         duration: self._parseDuration(item.duration),
                         podcast: self
-                    };
-                }).filter( function( item ){ 
-                    return item.audioUrl; 
+                    }),
+                    audioUrlRecords,
+                    audioUrlPromises;
+
+                    return podRecord.save().then( function(){
+                        audioUrlRecords = Array.prototype.slice.call( item.enclosures )
+                        .map( 
+                            function( url ){
+                                return self.store.createRecord( 'audioUrl',
+                                    {
+                                    audioUrl: url,
+                                    hasListened: false,
+                                    pod: podRecord
+                                    });
+                            }
+                        );
+                        
+                        audioUrlPromises = audioUrlRecords.invoke( 'save' );
+                        
+                        return Ember.RSVP.allSettled( audioUrlPromises )
+                        .then( function( results ){ 
+                            podRecord.get( 'audioUrls' ).addObjects( audioUrlRecords );
+                            return podRecord.save();
+                        });
+                    });    
                 });
 
+                return Ember.RSVP.all( podPromises ).then( function( pods ){
+
+                    self.get( 'pods' ).addObjects( pods );
+
+                    return self.save();
+                })
+                .catch( function( reason ){
+                    console.log( reason );
+                    return self.destroyRecord();
+                });
+
+/*
                 //get all the promises for every pod that will save
                 podPromises = pods.map( function( pod ){
                             //check to see if the pod is already in the store   
@@ -95,6 +129,7 @@ export default DS.Model.extend({
                                 return self.save();
                             });
                         });
+*/
             }, 
 
             null, 

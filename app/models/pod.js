@@ -12,16 +12,9 @@ export default DS.Model.extend({
 
     description: DS.attr( 'string' ),
 
-    audioUrl   : DS.attr( 'string' ),
-
-    duration   : DS.attr( 'number' ),
-
     pubDate    : DS.attr( 'date' ),
 
-    hasListened: DS.attr( 'boolean' ),
-
-    listenPosition : DS.attr( 'number' ),    
+    audioUrls  : DS.hasMany( 'audioUrl' ),
 
     podcast    : DS.belongsTo( 'podcast' )
-
 });

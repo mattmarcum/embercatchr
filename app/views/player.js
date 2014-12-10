@@ -44,9 +44,9 @@ export default Ember.View.extend({
     },
 
     audioUrlObserver: function(){
-        this.set( 'audioTag.src', this.get( 'controller.model.audioUrl' ) );
+        this.set( 'audioTag.src', this.get( 'controller.audioUrl' ) );
 
-    }.observes( 'controller.model.audioUrl' ),
+    }.observes( 'controller.audioUrl' ),
 
     audioTag: Ember.View.extend({
 
@@ -85,7 +85,11 @@ export default Ember.View.extend({
             this.set( 'controller.duration', Math.floor( this.$()[0].duration ));            
         },
         ontimeupdate: function(){
-            this.set( 'controller.currentPosition', Math.floor( this.$()[0].currentTime ) );
+            var time = Math.floor( this.$()[0].currentTime ); 
+            if( time > 10 ){
+                this.set( 'controller.model.hasListened', true );
+            }
+            this.set( 'controller.model.currentPosition', time );
         },
         onended: function(){
             this.send('playerEnded');

@@ -9,7 +9,13 @@
         <td>{{hasListened}}
     </tr>
 </table>
-<button type="button" class="btn btn-default" {{action playNow}}>Play Now</button>
+<div class="list-group">
+{{#each audioUrls}}
+    <a href="#" class="list-group-item" {{action playNow audioUrl}}>{{file-name audioUrl}}</a>
+{{else}}
+    <a href="#" class="list-group-item disabled" >No audio files found</a>
+{{/each}}
+</ul>
 <hr/>
 <p>{{subtitle}}</p>
 {{{description}}}

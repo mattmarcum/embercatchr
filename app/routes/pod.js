@@ -2,8 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     actions:{
-        playNow: function(){
-            this.controllerFor( 'player' ).set( 'model', this.modelFor( 'pod' ));
+        playNow: function( audioUrl ){
+            this.controllerFor( 'player' ).setProperties({
+                'model': this.modelFor( 'pod' ),
+                'audioUrl': audioUrl
+            });
         }
     },
     model: function( params ){

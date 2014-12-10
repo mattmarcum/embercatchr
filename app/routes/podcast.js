@@ -12,14 +12,14 @@ export default Ember.Route.extend({
             var self = this,
                 podcast = self.modelFor( 'podcast' );
            
-            podcast.get( 'pods' ).invoke( 'destroyRecord' );
+            podcast.get( 'pods' ).forEach( function( pod ){
+                pod.get( 'audioUrls' ).invoke( 'destroyRecord' );
+                pod.destroyRecord();
+            });
 
             podcast.destroyRecord()
             .then( function(){
                 self.transitionTo( 'podcasts' );
-            }).catch( function( error ){
-                self.send( 'addAlert', 'error', 'Failed to delete the podcast' );
-                console.log('data error:', error );
             });
 
         }

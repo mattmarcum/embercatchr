@@ -7,8 +7,6 @@ export default Ember.ObjectController.extend({
         }
     },
 
-    currentPosition: 0,
-
     currentPercentage: function(){
         var duration = this.getWithDefault( 'duration', 0 ),
             position = this.getWithDefault( 'currentPosition', 0 );

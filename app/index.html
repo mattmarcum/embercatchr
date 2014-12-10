@@ -7,20 +7,19 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{BASE_TAG}}
+    {{content-for 'head'}}
 
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/embercatchr.css">
+
+    {{content-for 'head-footer'}}
   </head>
   <body>
-    <script>
-      window.EmbercatchrENV = {{ENV}};
-      window.EmberENV = window.EmbercatchrENV.EmberENV;
-    </script>
+    {{content-for 'body'}}
+
     <script src="assets/vendor.js"></script>
     <script src="assets/embercatchr.js"></script>
-    <script>
-      window.Embercatchr = require('embercatchr/app')['default'].create(EmbercatchrENV.APP);
-    </script>
+
+    {{content-for 'body-footer'}}
   </body>
 </html>
